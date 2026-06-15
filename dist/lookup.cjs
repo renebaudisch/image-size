@@ -966,6 +966,12 @@ var globalOptions = {
   disabledTypes: []
 };
 function imageSize(input) {
+  if (!(input[0] << 24 | input[1] << 16 | input[2] << 8 | input[3])) {
+    return {
+      width: 0,
+      height: 0
+    };
+  }
   const type = detector(input);
   if (typeof type !== "undefined") {
     if (globalOptions.disabledTypes.indexOf(type) > -1) {
@@ -984,7 +990,10 @@ function imageSize(input) {
       return size;
     }
   }
-  throw new TypeError(`unsupported file type: ${type}`);
+  return {
+    width: 0,
+    height: 0
+  };
 }
 var disableTypes = (types2) => {
   globalOptions.disabledTypes = types2;

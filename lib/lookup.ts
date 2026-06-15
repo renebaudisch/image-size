@@ -17,7 +17,11 @@ const globalOptions: Options = {
  * @param {Uint8Array} input
  * @returns {ISizeCalculationResult}
  */
-export function imageSize(input: Uint8Array): ISizeCalculationResult {
+export function imageSize(input: Uint8Array): ISizeCalculationResult | undefined {
+  // filter out files with 0 size boxes
+  if (!((input[0] << 24) | (input[1] << 16) | (input[2] << 8) | input[3])) {
+    return
+  }
   // detect the file type... don't rely on the extension
   const type = detector(input)
 
@@ -48,8 +52,7 @@ export function imageSize(input: Uint8Array): ISizeCalculationResult {
     }
   }
 
-  // throw up, if we don't understand the file
-  throw new TypeError(`unsupported file type: ${type}`)
+  return
 }
 
 export const disableTypes = (types: imageType[]): void => {
