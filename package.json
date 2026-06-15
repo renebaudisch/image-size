@@ -84,18 +84,21 @@
     "type": "git",
     "url": "git://github.com/image-size/image-size.git"
   },
-  "author": "netroy <aditya@netroy.in> (http://netroy.in/)",
+  "author": "netroy <aditya@netroy.in> (https://netroy.in/)",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.5.0",
     "@types/glob": "8.1.0",
-    "@types/node": "18.19.39",
-    "c8": "10.1.3",
-    "glob": "10.4.2",
+    "@types/node": "25.9.3",
+    "c8": "11.0.0",
+    "glob": "11.1.0",
     "ts-node": "10.9.2",
-    "tsup": "8.3.5",
-    "typedoc": "0.25.13",
-    "typescript": "5.4.5"
+    "tsup": "8.5.1",
+    "typedoc": "0.28.19",
+    "typescript": "6.0.3"
+  },
+  "resolutions": {
+    "esbuild": "0.28.1"
   },
   "nyc": {
     "include": "lib",

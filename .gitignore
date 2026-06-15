@@ -9,3 +9,4 @@ docs/
 .yarn/*.gz
 .yarn/cache
 *.tgz
+.idea/

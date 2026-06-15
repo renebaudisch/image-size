@@ -1,21 +1,10 @@
-# Tired maintainer doesn't want your slop
-Archiving this repo, because I don't want to deal with the same LLM generated "security advisory" about an inifinite loop over and over again.  
-I do not wish to participate in this sloppy mess of a platform. 
-Please do not create issues or advisories for me, and please do not summon me 🙏.
-
-At some point I'll revive this project to address actual issues, but on [Codeberg](https://codeberg.org/image-size/image-size).
-
-This repo on github will not be updated. 
-
----
-
 # image-size
 
 [![Build Status](https://circleci.com/gh/image-size/image-size.svg?style=shield)](https://circleci.com/gh/image-size/image-size)
 [![Package Version](https://img.shields.io/npm/v/image-size.svg)](https://www.npmjs.com/package/image-size)
 [![Downloads](https://img.shields.io/npm/dm/image-size.svg)](http://npm-stat.com/charts.html?package=image-size&author=netroy&from=&to=)
 
-Fast, lightweight NodeJS package to get dimensions of any image file or buffer.
+Fast, lightweight Node.js package to get dimensions of any image file or buffer.
 
 ## Key Features
 - Zero dependencies
@@ -93,12 +82,12 @@ const { setConcurrency } = require('image-size/fromFile')
 setConcurrency(123456)
 ```
 
-### Reading from a file Syncronously (not recommended) ⚠️
+### Reading from a file sync (not recommended) ⚠️
 v1.x of this library had a sync API, that internally used sync file reads.  
 
 This isn't recommended because this blocks the node.js main thread, which reduces the performance, and prevents this library from being used concurrently.  
 
-However if you still need to use this package syncronously, you can read the file syncronously into a buffer, and then pass the buffer to this library.  
+However, if you still need to use this package sync, you can read the file sync into a buffer, and then pass the buffer to this library.  
 
 ```javascript
 import { readFileSync } from 'node:fs'
@@ -140,7 +129,7 @@ import url from 'node:url'
 import http from 'node:http'
 import { imageSize } from 'image-size'
 
-const imgUrl = 'http://my-amazing-website.com/image.jpeg'
+const imgUrl = 'https://my-amazing-website.com/image.jpeg'
 const options = url.parse(imgUrl)
 
 http.get(options, function (response) {
@@ -204,6 +193,6 @@ MIT
 ## Credits
 
 not a direct port, but an attempt to have something like
-[dabble's imagesize](https://github.com/dabble/imagesize/blob/master/lib/image_size.rb) as a node module.
+[dabbles imagesize](https://github.com/dabble/imagesize/blob/master/lib/image_size.rb) as a node module.
 
 ## [Contributors](Contributors.md)

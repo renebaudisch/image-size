@@ -1,9 +1,13 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
+  dts: {
+    compilerOptions: {
+      ignoreDeprecations: '6.0',
+    },
+  },
   entry: ['lib/**/*.ts'],
   format: ['cjs', 'esm'],
-  dts: true,
   clean: true,
   sourcemap: false,
   splitting: false,

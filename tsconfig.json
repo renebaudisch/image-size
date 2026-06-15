@@ -9,8 +9,8 @@
     "removeComments": false,
     "strict": true,
     "alwaysStrict": true,
-    "moduleResolution": "node",
     "lib": ["ES2021", "DOM"],
+    "types": ["node"],
     "skipLibCheck": true
   },
   "include": [
